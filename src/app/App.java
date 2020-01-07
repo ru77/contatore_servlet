@@ -9,27 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class App extends HttpServlet{
-    /**
-     *
-     */
-    private static final long serialVersionUID = -3967314453512919811L;
 
-  public static void main(String[] args) throws Exception {
+   private static final long serialVersionUID = -3967314453512919811L;
+
+   public static void main(String[] args) throws Exception {
         System.out.println("Hello Java 1");
-  }
+   }
 
-  private int hitCount;
+   private int hitCount;
 
    public void init() { hitCount = 0; }
 
    public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-      // Set response content type
       response.setContentType("text/html");
 
-      // This method executes whenever the servlet is hit
-      // increment hitCount
       hitCount++;
       PrintWriter out = response.getWriter();
       String title = "contatore accessi servlet";
